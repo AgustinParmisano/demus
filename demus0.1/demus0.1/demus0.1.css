@@ -1,0 +1,42 @@
+/* CSS declarations go here */
+.video{
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+
+.videos {
+    width: 40%;
+    z-index: -1;
+}
+
+.videos-to-vote{
+    margin-left: 10%;
+    margin-right: auto;
+    width: 100%;
+    position: relative;
+}
+
+.video-playing-showing{
+	top: 17%;
+	left: 30%;
+    width: 100%;
+    z-index: 10;
+    float: left;
+    position: absolute;
+}
+
+.video-playing{
+	top: 17%;
+	left: 30%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+}
+
+.video-showing{
+    width: 40%;
+    z-index: 10;
+    position: relative;
+}
+
