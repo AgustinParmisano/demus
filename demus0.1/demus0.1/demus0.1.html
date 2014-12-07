@@ -7,27 +7,22 @@
 </body>
 
 <template name="videos">
-	<div class="container">
-		<div class="video">
-			<div class="videos-to-vote">
-				<video class="videos" controls>
-				  <source src="/musicVideos/areLind-Blackmill.mp4" type="video/mp4">
-				</video>
-				<video class="videos" controls>
-				  <source src="/musicVideos/areLind-Blackmill.mp4" type="video/mp4">
-				</video>
-				<video class="videos" controls>
-				  <source src="/musicVideos/areLind-Blackmill.mp4" type="video/mp4">
-				</video>
-				<video class="videos" controls>
-				  <source src="/musicVideos/areLind-Blackmill.mp4" type="video/mp4">
-				</video>
-			</div>
-			<div class="video-playing">
-				<video class="videos" controls>
-				  <source src="/musicVideos/areLind-Blackmill.mp4" type="video/mp4">
-				</video>
+		<div class="container">
+			<div class="video">
+				<div class="videos-to-vote">
+					{{#each videosToVote}}
+						<video class="videos" controls>
+							<source src="/musicVideos/{{url}}.mp4" type="video/mp4">
+						</video>
+					{{/each}}
+				</div>	
+				<div class="video-playing">
+					<video class="videos" controls>
+					  <source src="/musicVideos/areLind-Blackmill.mp4" type="video/mp4">
+					</video>
+				</div>
 			</div>
 		</div>
-	</div>
 </template>
+
+

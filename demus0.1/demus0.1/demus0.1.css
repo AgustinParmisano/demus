@@ -1,26 +1,24 @@
 /* CSS declarations go here */
 .video{
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%;
+
 }
 
 .videos {
+    position: static;
     width: 40%;
     z-index: -1;
 }
 
 .videos-to-vote{
-    margin-left: 10%;
     margin-right: auto;
-    width: 100%;
+    width: 120%;
     position: relative;
 }
 
 .video-playing-showing{
 	top: 17%;
-	left: 30%;
-    width: 100%;
+	left: 25%;
+    width: 120%;
     z-index: 10;
     float: left;
     position: absolute;
@@ -28,8 +26,8 @@
 
 .video-playing{
 	top: 17%;
-	left: 30%;
-    width: 100%;
+	left: 25%;
+    width: 120%;
     z-index: -1;
     position: absolute;
 }
