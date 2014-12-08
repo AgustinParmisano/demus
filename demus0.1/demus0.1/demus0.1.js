@@ -4,19 +4,30 @@ if (Meteor.isClient) {
 
   Template.videos.helpers({
     videosToVote: function () {
-      return Videos.find({estado:"paraVotar"});
+      var videosForVote = Videos.find({state:"forVote"});
+      //console.log(videosForVote);
+      return videosForVote; 
+    },
+
+    videoPlaying: function () {
+      return Videos.find({state:"reproducing"});
     }
   });
 
   Template.videosToVoteButtons.helpers({
     videosToVote: function () {
-      return Videos.find({estado:"paraVotar"});
+      return Videos.find({state:"forVote"}, {sort: {actualPoints: -1}});
     }
   });
 
   Template.videos.events({
-    'click button': function () {
-      // increment the counter when button is clicked
+    'ended .videoPlaying': function () {
+       
+       console.log("TERMINO VIDEO: " + this.name);
+       //Videos.update(this._id, {$set: {state: "forVote"} });
+       var arraOfVideos = (Videos.find({state: "forVote"}, {sort: {actualPoints: -1}})).fetch();//.sort({actualPoints: -1}).limit(1);
+       var mostVotedVideo = (arraOfVideos.slice(0,1));
+       console.log(mostVotedVideo[0].name);
     }
   });
 
@@ -26,9 +37,11 @@ if (Meteor.isClient) {
       console.log(votedVideo);
       var videoID = Videos.findOne({name: votedVideo});
       console.log(videoID);
-      Videos.update({_id: videoID._id}, {$inc: {votesToday: 1, votesHistory: 1}});
+      Videos.update({_id: videoID._id}, {$inc: {actualPoints: 1, historyPoints: 1}});
     } 
   });
+
+
 
 
 }

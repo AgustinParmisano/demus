@@ -9,6 +9,12 @@
     z-index: -1;
 }
 
+.videoPlaying {
+    position: static;
+    width: 40%;
+    z-index: -1;
+}
+
 .videos-to-vote{
     margin-right: auto;
     width: 120%;
@@ -16,9 +22,9 @@
 }
 
 .video-playing-showing{
-	top: 17%;
-	left: 25%;
-    width: 120%;
+	top: 20%;
+	left: 18%;
+    width: 150%;
     z-index: 10;
     float: left;
     position: absolute;

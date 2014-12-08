@@ -11,16 +11,18 @@
 			<div class="video">
 				<div class="videos-to-vote">
 					{{#each videosToVote}}
-						<video class="videos" controls>
-							<source src="/musicVideos/{{url}}.mp4" type="video/mp4">
+						<video name="videosForVoting" class="videos" muted controls>
+							<source src="/musicVideos/{{src}}" type="video/mp4">
 						</video>
 					{{/each}}
-				</div>	
-				<div class="video-playing">
-					<video class="videos" controls>
-					  <source src="/musicVideos/areLind-Blackmill.mp4" type="video/mp4">
-					</video>
 				</div>
+				{{#each videoPlaying}}
+					<div class="video-playing-showing">
+						<video name="videoPlaying" class="videoPlaying" controls>
+						  <source src="/musicVideos/{{src}}" type="video/mp4">
+						</video>
+					</div>
+				{{/each}}
 			</div>
 		</div>
 </template>
